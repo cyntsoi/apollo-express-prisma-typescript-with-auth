@@ -12,10 +12,7 @@ export class IsUserAlreadyExistConstraint
     validate(username: string) {
         return prisma.user.findFirst({
             where: { username },
-        }).then((user) => {
-            if (user) return false;
-            return true;
-        });
+        }).then(user => !user);
     }
 }
 

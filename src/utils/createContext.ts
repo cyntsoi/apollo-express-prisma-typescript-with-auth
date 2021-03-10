@@ -8,7 +8,6 @@ export interface Context {
     res: Response
 }
 
-
 export default ({req, res}: Pick<Context, "req" | "res">): Context => ({
     prisma,
     req,

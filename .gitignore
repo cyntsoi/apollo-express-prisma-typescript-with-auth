@@ -1,4 +1,11 @@
 node_modules
 
+#prisma
+/prisma/migrations
+/prisma/generated
+
+#environment variables
+.env
+
 #misc
 /.idea

@@ -1,8 +1,7 @@
-import {buildSchema, BuildSchemaOptions} from "type-graphql"
-
+import {buildSchema, BuildSchemaOptions} from "type-graphql";
 
 const options: BuildSchemaOptions = {
-    resolvers: [__dirname + "../../modules/**/resolver.ts", __dirname + "../../modules/**/*.resolver.ts", __dirname + "../../modules/**/resolvers/*.ts"],
+    resolvers: [ __dirname + "../../modules/**/resolvers/*.ts"],
     dateScalarMode: "timestamp",
 }
 

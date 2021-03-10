@@ -1,18 +1,18 @@
-import { Field, ArgsType } from 'type-graphql'
+import { Field, InputType } from 'type-graphql'
 import { IsEmail, Length } from 'class-validator'
-import User from './User'
 import { IsEmailAlreadyExist } from '../validators/IsEmailAlreadyExist'
 import { IsUserAlreadyExist } from '../validators/isUserAlreadyExist'
+import User from "../types/User";
 
-@ArgsType()
-export class SignInArgs implements Partial<User>{
+@InputType()
+export class SignupArgs implements Partial<User>{
     @Field()
-    @IsUserAlreadyExist()
+    @IsUserAlreadyExist({message: "User already exists!"})
     username: string
 
     @Field()
     @IsEmail()
-    @IsEmailAlreadyExist()
+    @IsEmailAlreadyExist({message: "Email already exists!"})
     email: string
 
     @Field()

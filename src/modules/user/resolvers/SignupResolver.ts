@@ -1,12 +1,12 @@
-import {Arg, Mutation, Ctx, ArgsType, Field} from "type-graphql";
-import User from "../types/User";
+import {Arg, Mutation, Ctx} from "type-graphql";
 import {Context} from "../../../utils/createContext";
 import bcrypt from "bcryptjs"
-import {SignInArgs} from "../types/SignInArgs";
+import User from "../types/User";
+import {SignupArgs} from "../types/SignupArgs";
 
-export default class SignInResolver {
+export default class SignupResolver {
     @Mutation(() => User, {nullable: true})
-    async registerUser(@Arg('data') {password: passwordBeforeHashing, ...args}: SignInArgs, @Ctx() {prisma}: Context) {
+    async signupUser(@Arg('data') {password: passwordBeforeHashing, ...args}: SignupArgs, @Ctx() {prisma}: Context) {
         const password = await bcrypt.hash(passwordBeforeHashing, 12)
         return await prisma.user.create(
             {

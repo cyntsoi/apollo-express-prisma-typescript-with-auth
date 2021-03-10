@@ -6,19 +6,15 @@ import {
 } from "class-validator";
 import prisma from "../../../utils/prisma"
 
-@ValidatorConstraint({ async: true })
+@ValidatorConstraint({async: true})
 export class IsEmailAlreadyExistConstraint
     implements ValidatorConstraintInterface {
-    validate(email: string, ) {
+    validate(email: string) {
         return prisma.user.findFirst({
-            where: { email },
-        }).then((user) => {
-            if (user) return false;
-            return true;
-        });
+            where: {email},
+        }).then(user => !user);
     }
 }
-
 
 
 export function IsEmailAlreadyExist(validationOptions?: ValidationOptions) {
