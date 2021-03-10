@@ -1,4 +1,4 @@
-import {Arg, Mutation, Ctx} from "type-graphql";
+import {Arg, Mutation, Ctx, Resolver} from "type-graphql";
 import {Context} from "../../../utils/context";
 import User from "../types/User";
 import bcrypt from "bcryptjs"
@@ -7,7 +7,7 @@ import {AuthenticationError} from "apollo-server-express";
 import getCurrentUserFromContext from "../utils/getCurrentUserFromContext";
 import getPrismaFromContext from "../../../utils/getPrismaFromContext";
 
-
+@Resolver()
 export default class LoginUserResolver {
     @Mutation(() => User)
     async loginUser(@Arg('data') {identifier, password}: LoginUserInput, @Ctx()context: Context) {

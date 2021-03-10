@@ -9,7 +9,7 @@ import session from "express-session"
 import sessionOptions from "./utils/sessionOptions";
 import {APP_PORT, IS_PROD} from "./utils/constants";
 
-(async () => {
+;(async () => {
     const app = express()
 
     app.use(session(sessionOptions))
