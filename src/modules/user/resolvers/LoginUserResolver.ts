@@ -1,5 +1,5 @@
 import {Arg, Mutation, Ctx} from "type-graphql";
-import {Context} from "../../../utils/createContext";
+import {Context} from "../../../utils/context";
 import User from "../types/User";
 import bcrypt from "bcryptjs"
 import {LoginUserInput} from "../types/LoginUserInput";

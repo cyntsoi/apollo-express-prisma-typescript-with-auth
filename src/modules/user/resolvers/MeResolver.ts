@@ -1,5 +1,5 @@
 import {Ctx, Query, Resolver} from "type-graphql";
-import {Context} from "../../../utils/createContext";
+import {Context} from "../../../utils/context";
 import User from "../types/User";
 import getCurrentUserFromContext from "../utils/getCurrentUserFromContext";
 

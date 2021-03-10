@@ -5,7 +5,7 @@ import { IsUserAlreadyExist } from '../validators/isUserAlreadyExist'
 import User from "../types/User";
 
 @InputType()
-export class SignupArgs implements Partial<User>{
+export class SignupUserInput implements Partial<User>{
     @Field()
     @IsUserAlreadyExist({message: "User already exists!"})
     username: string

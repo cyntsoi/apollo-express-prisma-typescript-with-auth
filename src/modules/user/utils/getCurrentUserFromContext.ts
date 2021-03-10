@@ -1,4 +1,4 @@
-import {Context} from "../../../utils/createContext";
+import {Context} from "../../../utils/context";
 import getPrismaFromContext from "../../../utils/getPrismaFromContext";
 import getCurrentUserIdFromContext from "./getCurrentUserIdFromContext";
 

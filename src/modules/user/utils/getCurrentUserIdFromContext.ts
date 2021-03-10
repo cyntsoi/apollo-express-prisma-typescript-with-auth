@@ -1,4 +1,4 @@
-import {Context} from "../../../utils/createContext";
+import {Context} from "../../../utils/context";
 
 export default (context: Context) => {
     // @ts-ignore
