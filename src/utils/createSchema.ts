@@ -24,4 +24,4 @@ const options: BuildSchemaOptions = {
     dateScalarMode: "timestamp",
 }
 
-export default () => buildSchema(options)
+export default async () => await buildSchema(options)
