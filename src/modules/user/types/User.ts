@@ -1,2 +1,2 @@
-import {User} from "@generated/type-graphql/models";
+import {User} from "../../../../prisma/generated/type-graphql/models";
 export default User
