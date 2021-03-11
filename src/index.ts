@@ -19,6 +19,7 @@ import {APP_PORT, IS_PROD} from "./utils/constants";
             schema: await createSchema(),
             context,
             playground: !IS_PROD,
+            introspection: !IS_PROD
         }
     )
 
