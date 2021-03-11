@@ -2,6 +2,7 @@ import {AuthChecker, buildSchema, BuildSchemaOptions} from "type-graphql";
 import {Context} from "./context";
 import getCurrentUserFromContext from "../modules/user/utils/getCurrentUserFromContext";
 import enhanceSchema from "./enhanceSchema";
+import userResolvers from "../modules/user/resolvers"
 
 // apply middleware to generated schemas
 enhanceSchema()
@@ -19,7 +20,7 @@ const authChecker : AuthChecker<Context> = async (
 }
 
 const options: BuildSchemaOptions = {
-    resolvers: [ __dirname + "../../modules/**/resolvers/*.ts"],
+    resolvers: [ ...userResolvers] as any,
     authChecker,
     dateScalarMode: "timestamp",
 }
