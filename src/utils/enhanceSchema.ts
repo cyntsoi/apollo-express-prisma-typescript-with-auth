@@ -1,7 +1,7 @@
 import {
     ResolversEnhanceMap,
     applyResolversEnhanceMap,
-} from "../../prisma/generated/type-graphql";
+} from "../__generated__";
 import { Authorized } from "type-graphql";
 
 const resolversEnhanceMap: ResolversEnhanceMap = {

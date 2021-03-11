@@ -4,6 +4,7 @@ node_modules
 #prisma
 /prisma/migrations
 /prisma/generated
+__generated__
 
 #environment variables
 .env

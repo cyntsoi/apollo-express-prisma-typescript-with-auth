@@ -1,3 +1,3 @@
-import {FindManyUserResolver} from "../../../../prisma/generated/type-graphql/resolvers/crud/User/FindManyUserResolver";
+import {FindManyUserResolver} from "../../../__generated__";
 
 export default FindManyUserResolver
