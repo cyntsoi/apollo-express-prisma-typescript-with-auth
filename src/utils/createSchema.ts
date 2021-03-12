@@ -18,8 +18,7 @@ const authChecker : AuthChecker<Context> = async (
     if (!user) return false;
 
     if (roles.length > 0){
-
-        return roles.indexOf(user.role)
+        return roles.indexOf(user.role) !== -1
     }
 
     // more validation logic here

@@ -19,16 +19,16 @@ model Session {
   expiresAt DateTime
 }
 
-enum UserRole{
-    ADMINISTRATOR
-    SUBSCRIBER
-}
-
 model User {
-  id       Int    @id @default(autoincrement())
-  username String @unique
+  id       Int      @id @default(autoincrement())
+  username String   @unique
   email    String
   /// @TypeGraphQL.omit(output: true)
   password String
-  role UserRole @default(SUBSCRIBER)
+  role     UserRole @default(SUBSCRIBER)
+}
+
+enum UserRole {
+  ADMINISTRATOR
+  SUBSCRIBER
 }
